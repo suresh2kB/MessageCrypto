@@ -7,6 +7,9 @@
     android:layout_height="match_parent"
     tools:context=".RegisterActivity">
 
+    <!--
+    Activity for registering the user to firebase
+    -->
     <include
         android:id="@+id/toolbar"
         layout="@layout/bar_layout"

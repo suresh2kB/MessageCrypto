@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email Not verified"
+        android:layout_centerVertical="true"
+        android:textColor="@color/design_default_color_error"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/text_varify"
+        android:textSize="40sp"
+        android:visibility="gone"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_below="@+id/text_not_varified"
+        android:background="@color/colorPrimaryDark"
+        android:text="Send Varification link"
+        android:id="@+id/btn_varify"
+        android:visibility="gone"
+        android:textColor="#fff"/>
+
+
+</RelativeLayout>
