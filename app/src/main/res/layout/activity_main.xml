@@ -21,12 +21,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:layout_below="@+id/text_not_varified"
+        android:layout_below="@+id/text_varify"
         android:background="@color/colorPrimaryDark"
         android:text="Send Varification link"
         android:id="@+id/btn_varify"
         android:visibility="gone"
         android:textColor="#fff"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:text="Hello to main activity"/>
 
 
 </RelativeLayout>
