@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/colorPrimary"
     android:gravity="center"
     tools:context=".StartActivity">
 
@@ -14,7 +15,7 @@
         android:layout_height="wrap_content"
         android:text="Welcome to Crypto Chat "
         android:textSize="30sp"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="#fff"
         />
 
     <Button
@@ -25,8 +26,7 @@
         android:background="@color/colorPrimaryDark"
         android:textColor="#fff"
         android:id="@+id/btn_login"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
+
         />
     <Button
         android:layout_width="match_parent"
@@ -36,8 +36,7 @@
         android:background="@color/colorPrimaryDark"
         android:textColor="#fff"
         android:id="@+id/btn_register"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
+
         />
 
 
