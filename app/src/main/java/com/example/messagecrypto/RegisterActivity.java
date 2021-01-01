@@ -33,6 +33,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 //    The entry point of the Firebase Authentication SDK.
 //    First, obtain an instance of this class by calling getInstance()
+
     FirebaseAuth auth;
     DatabaseReference reference;
 
@@ -82,7 +83,7 @@ public class RegisterActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful())
                         {
-                            FirebaseUser firebaseUser = auth.getCurrentUser();
+                            final FirebaseUser firebaseUser = auth.getCurrentUser();
                             assert firebaseUser != null;
                             String userid = firebaseUser.getUid();
 
@@ -90,7 +91,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override
                                         public void onSuccess(Void aVoid) {
-                                            Toast.makeText(RegisterActivity.this, "An Email has been sent for verify your account", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(RegisterActivity.this, "An Email has been sent for verify your account Please varify and login again", Toast.LENGTH_SHORT).show();
                                         }
                                     }).addOnFailureListener(new OnFailureListener() {
                                 @Override
@@ -111,10 +112,12 @@ public class RegisterActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful())
                                     {
-                                        Intent intent = new Intent(RegisterActivity.this,MainActivity.class);
-                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                                        startActivity(intent);
-                                        finish();
+                                        if(firebaseUser.isEmailVerified()) {
+                                            Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+                                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                            startActivity(intent);
+                                            finish();
+                                        }
                                     }
                                     else{
                                         Toast.makeText(RegisterActivity.this, "Something went wrong!!", Toast.LENGTH_SHORT).show();

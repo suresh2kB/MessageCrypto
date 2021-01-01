@@ -3,6 +3,7 @@ package com.example.messagecrypto;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,6 +19,7 @@ import com.bumptech.glide.Glide;
 import com.example.messagecrypto.Model.User;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -50,17 +52,19 @@ public class MainActivity extends AppCompatActivity {
 
         btn_varify = findViewById(R.id.btn_varify);
         text_varify = findViewById(R.id.text_varify);
+
         username = findViewById(R.id.username);
         profile_image = findViewById(R.id.profile_image);
 
         auth = FirebaseAuth.getInstance();
         final FirebaseUser firebaseUser = auth.getCurrentUser();
+        assert firebaseUser != null;
         reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
 
         if(!firebaseUser.isEmailVerified())
         {
-            btn_varify.setVisibility(View.VISIBLE);
-            text_varify.setVisibility(View.VISIBLE);
+            //btn_varify.setVisibility(View.VISIBLE);
+            //text_varify.setVisibility(View.VISIBLE);
 
             btn_varify.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -100,6 +104,10 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        
+        TabLayout tabLayout = findViewById(R.id.tab_layout);
+        ViewPager viewPager = findViewById(R.id.view_pager);
+
 
     }
 
