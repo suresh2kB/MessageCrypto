@@ -2,4 +2,4 @@
 ## started new Project 
 ## Miles to go
 ## Initial setup done
-## Today 31-12-2020 Complete authntication done 
+## Today 02-01-2021 Users Showing activity done patially now it shows all users
