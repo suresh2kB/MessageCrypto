@@ -23,7 +23,7 @@ public class StartActivity extends AppCompatActivity {
 
         if(firebaseUser!=null)
         {
-            Intent intent = new Intent(StartActivity.this,MainActivity.class);
+            Intent intent = new Intent(StartActivity.this,ChangeActivity.class);
             startActivity(intent);
             finish();
         }

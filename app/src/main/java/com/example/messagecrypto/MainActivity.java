@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.messagecrypto.Fragments.ChatsFragment;
+import com.example.messagecrypto.Fragments.ProfileFragment;
 import com.example.messagecrypto.Fragments.UsersFragment;
 import com.example.messagecrypto.Model.User;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -119,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
         viewPagerAdapter.addFragment(new ChatsFragment(),"Chats");
         viewPagerAdapter.addFragment(new UsersFragment(),"Users");
+        viewPagerAdapter.addFragment(new ProfileFragment(),"Profile");
 
         viewPager.setAdapter(viewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
